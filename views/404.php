@@ -4,3 +4,4 @@ Désolé, la page <b><?=$uri?></b> n'existe pas...
 $title = 'Erreur 404';
 $content = ob_get_clean();
 include 'includes/layout.php';
+?>

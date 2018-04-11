@@ -19,3 +19,4 @@ if (count($segments) <= 1 and file_exists($controller)) {
 else {
     include 'controllers/404.php';
 }
+?>

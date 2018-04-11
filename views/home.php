@@ -13,3 +13,4 @@ Civility vicinity graceful is it at. Improve up at to on mention perhaps raising
 $title = 'Accueil';
 $content = ob_get_clean();
 include 'includes/layout.php';
+?>
