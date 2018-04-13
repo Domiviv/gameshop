@@ -11,5 +11,5 @@ if(!empty($_GET['id']))
     $title = "Edition du jeu: ".$game['title'];
     $action = "edit_game";
 }
-include 'views/editgame.php';
+include 'views/edit_game.php';
 ?>
