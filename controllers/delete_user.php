@@ -5,6 +5,9 @@ if(empty($_SESSION['login']) or strtolower($_SESSION['login'])!='admin'){
     header('Location: index');
     exit();
 }
-$users = getUsers();
-include 'views/users.php';
-?>
+if(!empty($_GET['id']))
+{
+    $user = deleteUser($_GET['id']);
+    header('Location: users');
+    exit();
+}

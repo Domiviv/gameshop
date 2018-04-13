@@ -1,10 +1,13 @@
 <?php
-require 'models/user.php';
+require 'models/game.php';
 session_start();
 if(empty($_SESSION['login']) or strtolower($_SESSION['login'])!='admin'){
     header('Location: index');
     exit();
 }
-$users = getUsers();
-include 'views/users.php';
-?>
+if(!empty($_GET['id']))
+{
+    $game = deleteGame($_GET['id']);
+    header('Location: gamespan');
+    exit();
+}

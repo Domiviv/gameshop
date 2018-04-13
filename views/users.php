@@ -20,11 +20,12 @@ ob_start();
                         <input type="hidden" name="id" value=<?=$user['id']?>>
                         <button class="btn btn-outline-success" type="submit">Editer</button>
                     </form>
+                    &nbsp;
                     <?php if($_SESSION['login'] != $user['login']):?>
                     <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal<?= $user['id']?>">
                         Supprimer
                     </button>
-                    <?php include 'includes/delete_model.php' ?>
+                    <?php include 'includes/delete_user.php' ?>
                     <?php endif ?>
                 </div>
             </td>
