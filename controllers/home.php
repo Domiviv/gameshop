@@ -1,6 +1,6 @@
 <?php
+require 'models/game.php';
 session_start();
-// require 'models/games.php';
-// $games = getGames();
+$games = getGames();
 require 'views/home.php';
 ?>
