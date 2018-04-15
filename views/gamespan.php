@@ -25,12 +25,12 @@ ob_start();
                       <button class="btn btn-outline-success" type="submit">Editer</button>
                   </form>
                   &nbsp;
-                  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal<?= $game['id']?>">
+                  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delgame<?= $game['id']?>">
                       Supprimer
                   </button>
                   <?php include 'includes/delete_game.php' ?>
                   &nbsp;
-                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modal2<?= $game['id']?>">
+                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#addimg<?= $game['id']?>">
                       Ajouter/changer une image
                   </button>
                   <?php include 'includes/add_image.php' ?>

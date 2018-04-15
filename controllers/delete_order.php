@@ -1,12 +1,15 @@
 <?php
-session_start();
 require 'models/order.php';
+session_start();
 if(empty($_SESSION['login']) or strtolower($_SESSION['login'])!='admin'){
     header('Location: index');
     exit();
 }
-else{
-  $orders = getOrders();
-  include 'views/orders.php';
+if(!empty($_GET['id']))
+{
+    $error='';
+    $order = deleteOrder($_GET['id']);
+    header('Location: orders');
+    exit();
 }
 ?>

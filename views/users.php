@@ -6,6 +6,7 @@ ob_start();
         <tr>
             <th scope="col">#</th>
             <th scope="col">Login</th>
+            <th scope="col">Rôle</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -14,6 +15,7 @@ ob_start();
         <tr>
             <th scope="row"><?=$user['id']?></th>
             <td><?=$user['login']?></td>
+            <td><?=$user['name']?></td>
             <td>
                 <div class="row">
                     <form action="user">
@@ -22,7 +24,7 @@ ob_start();
                     </form>
                     &nbsp;
                     <?php if($_SESSION['login'] != $user['login']):?>
-                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal<?= $user['id']?>">
+                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deluser<?= $user['id']?>">
                         Supprimer
                     </button>
                     <?php include 'includes/delete_user.php' ?>

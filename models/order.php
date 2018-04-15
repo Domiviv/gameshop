@@ -1,31 +1,30 @@
 <?php
 require 'db.php';
-function getUser($login) {
+function getOrder($otitle) {
     $db = getDb();
-    //$response = $db->query('SELECT * FROM USER WHERE login = \''.$login.'\'');
-    $response = $db->prepare('SELECT * FROM user WHERE login = :login');
-    $response->execute(array('login' => $login));
+    $response = $db->prepare('SELECT * FROM book WHERE title = :otitle');
+    $response->execute(array('title' => $otitle));
     $datas = $response->fetch();
     $response->closeCursor(); // Termine le traitement de la requête
     return $datas;
 }
-function getUsers() {
+function getOrders() {
     $db = getDb();
-    $response = $db->query('SELECT r.name, u.* FROM `user` AS u JOIN role AS r ON role_id = r.id; ');
+    $response = $db->query('SELECT b.*, u.login FROM book AS b JOIN `user` AS u ON user_id = u.id;');
     $datas = $response->fetchAll();
     $response->closeCursor(); // Termine le traitement de la requête
     return $datas;
 }
-function getUserById($id) {
+function getOrderById($id) {
     $db = getDb();
-    $response = $db->prepare('SELECT * FROM user WHERE id = :id');
+    $response = $db->prepare('SELECT * FROM book WHERE id = :id');
     $response->execute(array('id' => $id));
     $datas = $response->fetch();
     $response->closeCursor(); // Termine le traitement de la requête
     return $datas;
 }
-function setUser($id, $values) {
-    $query = 'UPDATE user SET';
+function setOrder($id, $values) {
+    $query = 'UPDATE book SET';
     foreach ($values as $name => $value) {
         $query = $query.' '.$name.' = :'.$name.',';
     }
@@ -35,14 +34,14 @@ function setUser($id, $values) {
     $response->execute(array_merge(array('id' => $id), $values));
     $response->closeCursor(); // Termine le traitement de la requête
 }
-function deleteUser($id) {
+function deleteOrder($id) {
     $db = getDb();
-    $response = $db->prepare('DELETE FROM USER WHERE id = :id;');
+    $response = $db->prepare('DELETE FROM book WHERE id = :id;');
     $response->execute(array('id' => $id));
     $response->closeCursor(); // Termine le traitement de la requête
 }
-function newUser($values) {
-    $query = 'INSERT INTO user SET';
+function newOrder($values) {
+    $query = 'INSERT INTO book SET';
     foreach ($values as $name => $value) {
         $query = $query.' '.$name.' = :'.$name.',';
     }
@@ -51,5 +50,19 @@ function newUser($values) {
     $response = $db->prepare($query);
     $response->execute($values);
     $response->closeCursor(); // Termine le traitement de la requête
+}
+function setStatus($id, $status){
+    $db = getDb();
+    if($status == 2){
+      $response = $db->prepare('UPDATE `book` SET `status_id` = 1 WHERE `book`.`id` = :id');
+      $response->execute(array('id' => $id));
+      $response->closeCursor();
+    }
+    else{
+      $response = $db->prepare('UPDATE `book` SET `status_id` = 2 WHERE `book`.`id` = :id');
+      $response->execute(array('id' => $id));
+      $response->closeCursor();
+    }
+
 }
 ?>

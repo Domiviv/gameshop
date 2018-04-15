@@ -16,9 +16,12 @@ ob_start() ?>
             <button type="submit" style="width: 95%;" class="btn btn-primary">Voir la fiche</button>
         </p>
       </form>
-      <p style="text-align: center">
-        <button type="button" style="width: 95%;" class="btn btn-success">Ajouter au panier</button>
-      </p>
+      <form method="post" action="add_to_cart">
+        <p style="text-align: center">
+          <input type="hidden" name="id" value=<?=$game['id']?>>
+          <button type="button" style="width: 95%;" class="btn btn-success">Ajouter au panier</button>
+        </p>
+      </form>
     </div>
     &nbsp;&nbsp;
   <?php endforeach ?>
