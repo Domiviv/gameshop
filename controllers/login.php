@@ -24,6 +24,7 @@ if(!empty($_POST))
             session_start();
             // On enregistre le login en session
             $_SESSION['login'] = $user['login'];
+            $_SESSION['role_id'] = $user['role_id'];
             // On redirige vers le fichier index.php
             header('Location: index');
             exit();

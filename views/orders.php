@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<table class="table">
+<table class="table table-hover table-striped">
     <thead>
         <tr>
             <th scope="col">Commande</th>

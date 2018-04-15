@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<table class="table">
+<table class="table table-hover table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -18,16 +18,28 @@ ob_start();
             <td><?=$user['name']?></td>
             <td>
                 <div class="row">
+                  <?php if($_SESSION['login'] != $user['login']):?>
                     <form action="user">
                         <input type="hidden" name="id" value=<?=$user['id']?>>
-                        <button class="btn btn-outline-success" type="submit">Editer</button>
+                        <button class="btn btn-outline-primary" type="submit">Editer</button>
                     </form>
                     &nbsp;
-                    <?php if($_SESSION['login'] != $user['login']):?>
-                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deluser<?= $user['id']?>">
-                        Supprimer
-                    </button>
-                    <?php include 'includes/delete_user.php' ?>
+                    <form method="get" action="promote">
+                        <input type="hidden" name="id" value=<?=$user['id']?>>
+                        <input type="hidden" name="role" value=<?=$user['role_id']?>>
+                        <?php
+                        if($user['role_id']==2){
+                          echo '<button class="btn btn-outline-success" type="submit">Promouvoir</button>';
+                        }
+                        else{
+                          echo '<button class="btn btn-outline-warning" type="submit">Rétrograder</button>';
+                        }
+                        ?>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deluser<?= $user['id']?>">
+                            Supprimer
+                        </button>
+                        <?php include 'includes/delete_user.php' ?>
+                    </form>
                     <?php endif ?>
                 </div>
             </td>

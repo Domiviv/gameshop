@@ -46,7 +46,7 @@
         <a class="nav-link" href="index">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <?php
-        if(!empty($_SESSION['login']) AND strtolower($_SESSION['login'])=="admin"){
+        if(!empty($_SESSION['login']) AND $_SESSION['role_id']==1){
           echo $admin;
         }
       ?>
@@ -59,7 +59,7 @@
         echo $disconnected;
       }
       if(!empty($_SESSION['login'])){
-        if(strtolower($_SESSION['login'])!='admin') echo $notadmin;
+        if($_SESSION['role_id']!=1) echo $notadmin;
         echo $connected;
       }
     ?>

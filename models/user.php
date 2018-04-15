@@ -52,4 +52,18 @@ function newUser($values) {
     $response->execute($values);
     $response->closeCursor(); // Termine le traitement de la requête
 }
+function setRole($id, $role){
+    $db = getDb();
+    if($role == 2){
+      $response = $db->prepare('UPDATE `user` SET `role_id` = 1 WHERE `user`.`id` = :id');
+      $response->execute(array('id' => $id));
+      $response->closeCursor();
+    }
+    else{
+      $response = $db->prepare('UPDATE `user` SET `role_id` = 2 WHERE `user`.`id` = :id');
+      $response->execute(array('id' => $id));
+      $response->closeCursor();
+    }
+
+}
 ?>

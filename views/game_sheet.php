@@ -13,7 +13,7 @@ ob_start()
   </div>
   <div class="card-body">
     <?php
-      if(!empty($_SESSION['login']) and strtolower($_SESSION['login'])=='admin'){
+      if(!empty($_SESSION['login']) and $_SESSION['role_id']==1){
         $mode = "edit";
       }
     ?>

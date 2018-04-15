@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'models/order.php';
-if(empty($_SESSION['login']) or strtolower($_SESSION['login'])!='admin'){
+if(empty($_SESSION['login']) or $_SESSION['role_id']!=1){
     header('Location: index');
     exit();
 }
