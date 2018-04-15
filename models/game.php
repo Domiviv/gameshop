@@ -51,4 +51,13 @@ function newGame($values) {
     $response->execute($values);
     $response->closeCursor(); // Termine le traitement de la requête
 }
+function cartByUser($id){
+    $db = getDb();
+    $query = "SELECT bi.*, i.title, b.user_id, b.status_id FROM item AS i JOIN book AS b JOIN book_item AS bi ON item_id = i.id AND book_id = b.id WHERE b.user_id = :id";
+    $response = $db->prepare($query);
+    $response->execute(array('id' => $id));
+    $datas = $response->fetchAll();
+    $response->closeCursor(); // Termine le traitement de la requête
+    return $datas;
+}
 ?>

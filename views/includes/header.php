@@ -22,8 +22,12 @@
   $disconnected = ob_get_clean();
   ob_start();
 ?>
-  <img src="/img/icon-cart.png" width="25" height="25" alt="icon-cart">
-  &nbsp;&nbsp;
+  <a role="button" href="cart" class="btn btn-info">
+    <img src="/img/icon-cart.png" width="20" height="20" alt="icon-cart"> &nbsp;&nbsp;Panier
+    <span class="badge badge-light">4</span>
+  </a>
+  &nbsp;
+
 <?php
   $notadmin=ob_get_clean();
   ob_start();
@@ -42,18 +46,18 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active <?php if($title =='Accueil'){echo 'active';}?>">
-        <a class="nav-link" href="index">Accueil <span class="sr-only">(current)</span></a>
-      </li>
+      &nbsp;&nbsp;
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Cherchez un jeu" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Recherche</button>
+      </form>
       <?php
         if(!empty($_SESSION['login']) AND $_SESSION['role_id']==1){
           echo $admin;
         }
       ?>
-      <li class="nav-item">
-        <a class="nav-link" href="about">A propos</a>
-      </li>
     </ul>
+
     <?php
       if(empty($_SESSION['login'])){
         echo $disconnected;

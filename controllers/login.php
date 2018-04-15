@@ -23,6 +23,7 @@ if(!empty($_POST))
             // On ouvre la session
             session_start();
             // On enregistre le login en session
+            $_SESSION['id'] = $user['id'];
             $_SESSION['login'] = $user['login'];
             $_SESSION['role_id'] = $user['role_id'];
             // On redirige vers le fichier index.php
