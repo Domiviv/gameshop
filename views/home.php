@@ -16,12 +16,14 @@ ob_start() ?>
             <button type="submit" style="width: 95%;" class="btn btn-primary">Voir la fiche</button>
         </p>
       </form>
+      <?php if(empty($_SESSION['login']) or $_SESSION['role_id']!=1):?>
       <form method="post" action="add_to_cart">
         <p style="text-align: center">
           <input type="hidden" name="id" value=<?=$game['id']?>>
-          <button type="button" style="width: 95%;" class="btn btn-success">Ajouter au panier</button>
+          <input type="submit" style="width: 95%;" value="Ajouter au panier" class="btn btn-success">
         </p>
       </form>
+      <?php endif?>
     </div>
     &nbsp;&nbsp;
   <?php endforeach ?>

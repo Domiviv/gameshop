@@ -24,7 +24,17 @@
 ?>
   <a role="button" href="cart" class="btn btn-info">
     <img src="/img/icon-cart.png" width="20" height="20" alt="icon-cart"> &nbsp;&nbsp;Panier
-    <span class="badge badge-light">4</span>
+    <span class="badge badge-light">
+      <?php
+      if(isset($_SESSION['cartQt'])){
+        echo $_SESSION['cartQt'];
+      }
+      else{
+        echo '0';
+      }
+      ?>
+
+    </span>
   </a>
   &nbsp;
 
