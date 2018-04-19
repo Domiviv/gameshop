@@ -53,16 +53,35 @@ function newOrder($values) {
 }
 function setStatus($id, $status){
     $db = getDb();
-    if($status == 2){
+    if($status == 3){
       $response = $db->prepare('UPDATE `book` SET `status_id` = 1 WHERE `book`.`id` = :id');
       $response->execute(array('id' => $id));
       $response->closeCursor();
     }
-    else{
-      $response = $db->prepare('UPDATE `book` SET `status_id` = 2 WHERE `book`.`id` = :id');
+
+}
+
+function purchase($id, $status){
+    $db = getDb();
+    if($status == 2){
+      $response = $db->prepare('UPDATE `book` SET `status_id` = 3 WHERE `book`.`id` = :id');
       $response->execute(array('id' => $id));
       $response->closeCursor();
     }
 
+}
+
+function checkIfOrder($id){
+  $db = getDb();
+  $response = $db->prepare('SELECT * FROM book WHERE status_id = 2 AND user_id = :id;');
+  $response->execute(array('id' => $id));
+  $datas = $response->fetch();
+  $response->closeCursor();
+  if($datas){
+    return $datas;
+  }
+  else{
+    return false;
+  }
 }
 ?>

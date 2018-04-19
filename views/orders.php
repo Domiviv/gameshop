@@ -24,17 +24,16 @@ ob_start();
                       if($order['status_id']==1){
                         echo '<button class="btn btn-outline-success" type="submit">Validée</button>';
                       }
-                      else{
+                      elseif($order['status_id']==2){
                         echo '<button class="btn btn-outline-warning" type="submit">En attente</button>';
+                      }
+                      else{
+                        echo '<button class="btn btn-outline-primary" type="submit">Payée</button>';
                       }
                       ?>
                   </form>
                   &nbsp;
-                  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delorder<?= $order['id']?>">
-                      Supprimer
-                  </button>
-                  <?php include 'includes/delete_order.php' ?>
-                  &nbsp;
+                  
               </div>
           </td>
 

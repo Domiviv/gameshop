@@ -1,4 +1,5 @@
 <?php
+$total = 0;
 ob_start(); ?>
 <div class="container">
   <table class="table table-hover table-striped">
@@ -6,8 +7,8 @@ ob_start(); ?>
           <tr>
               <th scope="col">Image</th>
               <th scope="col">Titre</th>
-              <th scope="col">Prix</th>
               <th scope="col">Actions</td>
+              <th scope="col" style ="text-align: right">Prix</th>
           </tr>
       </thead>
       <tbody>
@@ -16,17 +17,27 @@ ob_start(); ?>
           <tr>
               <td><img style="width: 2rem; text-align: center;" src="/img/games/gameNb<?=$item['item_id']?>.jpg" alt="" ></td>
               <td><?=$item['title']?></td>
-              <td><?=$item['price']?>€</td>
               <td>
                 <form method="get" action="remove_from_cart">
                   <input name="id" type="hidden" value=<?=$item['id']?>>
                   <input type="submit" value="&times;" class="btn btn-outline-danger btn-md">
                 </form>
               </td>
+              <td style ="text-align: right"><?=$item['price']?>€</td>
           </tr>
+          <?php $total = $total + $item['price'];?>
         <?php endforeach ?>
       </tbody>
   </table>
+  <p class="font-weight-bold" style ="text-align: right">TOTAL&nbsp;&nbsp;</p>
+  <p style ="text-align: right"><?=$total?>€&nbsp;&nbsp;</p>
+
+  <form style="text-align: right" method="get" action="purchase">
+    <input name="id" type="hidden" value=<?=$item['book_id']?>>
+    <input type="submit" value="Payer" class="btn btn-primary">
+  </form>
+</div>
+
 <?php
 $title = 'Panier';
 $content1 = ob_get_clean();
