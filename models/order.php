@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require_once ('db.php');
 function getOrder($otitle) {
     $db = getDb();
     $response = $db->prepare('SELECT * FROM book WHERE title = :otitle');

@@ -20,6 +20,7 @@ ob_start() ?>
       <form method="post" action="add_to_cart">
         <p style="text-align: center">
           <input type="hidden" name="id" value=<?=$game['id']?>>
+          <input type="hidden" name="price" value=<?=$game['price']?>>
           <input type="submit" style="width: 95%;" value="Ajouter au panier" class="btn btn-success">
         </p>
       </form>

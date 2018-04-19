@@ -1,5 +1,5 @@
 <?php
-require 'models/user.php';
+require_once ('models/user.php');
 $error = '';
 // Test de l'envoi du formulaire
 //if($_SERVER['REQUEST_METHOD'] == 'POST')

@@ -1,5 +1,5 @@
 <?php
-require 'models/game.php';
+require_once ('models/game.php');
 session_start();
 if(empty($_SESSION['login']) or $_SESSION['role_id']!=1){
     header('Location: index');

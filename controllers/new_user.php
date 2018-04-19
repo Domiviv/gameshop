@@ -1,5 +1,5 @@
 <?php
-require 'models/user.php';
+require_once ('models/user.php');
 session_start();
 if(!empty($_POST['login']))
 {

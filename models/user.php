@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require_once ('db.php');
 function getUser($login) {
     $db = getDb();
     //$response = $db->query('SELECT * FROM USER WHERE login = \''.$login.'\'');
