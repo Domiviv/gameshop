@@ -9,6 +9,9 @@ if(!empty($_GET['id']))
 {
     $order=getOrderById($_GET['id']);
     $res=purchase($_GET['id'], $order['status_id']);
+
+    //la ligne suivante a été ajoutée pour refresh le panier suite au payement
+    $_SESSION['cartQt']=0;
     header('Location: cart');
     exit();
 }

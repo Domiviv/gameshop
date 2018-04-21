@@ -12,7 +12,6 @@ ob_start(); ?>
           </tr>
       </thead>
       <tbody>
-
         <?php foreach($items as $item):?>
           <tr>
               <td><img style="width: 2rem; text-align: center;" src="/img/games/gameNb<?=$item['item_id']?>.jpg" alt="" ></td>
@@ -55,7 +54,8 @@ ob_start();
 $title = 'Panier';
 $content2 = ob_get_clean();
 
-if(isset($_SESSION['cartQt'])){
+//isset item ajouté car bug apres le payement pour affichage du panier
+if(isset($item) AND isset($_SESSION['cartQt'])){
   if($_SESSION['cartQt']!= 0){
     $content = $content1;
   }

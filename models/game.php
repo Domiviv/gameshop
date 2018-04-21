@@ -52,5 +52,12 @@ function newGame($values) {
     $response->closeCursor(); // Termine le traitement de la requête
 }
 
-
+function getInfosById($item_id) {
+    $db = getDb();
+    $response = $db->prepare('SELECT * FROM info_item WHERE item_id = :item_id');
+    $response->execute(array('item_id' => $item_id));
+    $datas = $response->fetch();
+    $response->closeCursor(); // Termine le traitement de la requête
+    return $datas;
+}
 ?>
