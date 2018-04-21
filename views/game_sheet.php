@@ -7,9 +7,6 @@ ob_start();
 
 <div class="font-weight-bold lead">Genre: </div>
 <p class="lead"><?=$infos['type'];?></p>
-
-<div class="font-weight-bold lead">Description: </div>
-<p class="lead"><?=$infos['description'];?></p>
 <?php
 $info = ob_get_clean();
 ob_start();
@@ -32,13 +29,12 @@ ob_start();
         ob_start();
         ?>
         <form style="text-align: right;" method="get" action="edit_info">
-          <input type="hidden" name="id" value="<?= $infos['id']?>">
+          <input type="hidden" name="id" value="<?= $game['id']?>">
           <input type="submit" name="update" class="btn btn-primary" value="Editer les informations">
         </form>
         <?php
         $formEdit=ob_get_clean();
         echo $formEdit;
-        include 'includes/edit_info.php';
       }
       ?>
       <?php

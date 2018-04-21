@@ -60,4 +60,17 @@ function getInfosById($item_id) {
     $response->closeCursor(); // Termine le traitement de la requête
     return $datas;
 }
+
+function newInfos($val) {
+    $query = 'INSERT INTO info_item SET';
+    foreach ($values as $name => $value) {
+        $query = $query.' '.$name.' = :'.$name.',';
+    }
+    $query = substr($query, 0, -1);
+    $db = getDb();
+    $response = $db->prepare($query);
+    $response->execute($values);
+    $response->closeCursor();
+}
+
 ?>
