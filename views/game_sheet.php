@@ -1,5 +1,6 @@
 
 <?php
+//TAMPON 1 : INFOS
 ob_start();
 ?>
 <div class="font-weight-bold lead">Editeur: </div>
@@ -9,6 +10,30 @@ ob_start();
 <p class="lead"><?=$infos['type'];?></p>
 <?php
 $info = ob_get_clean();
+
+
+//TAMPON 2 : BOUTON EDITION
+ob_start();
+?>
+<form style="text-align: right;" method="get" action="edit_info">
+  <input type="hidden" name="id" value="<?= $game['id']?>">
+  <input type="submit" name="update" class="btn btn-primary" value="Editer les informations">
+</form>
+<?php
+$formEdit=ob_get_clean();
+
+//TAMPON 3 : BOUTON REFRESH
+ob_start();
+?>
+&nbsp;
+<form style="text-align: right;" method="get" action="game_sheet">
+  <input type="hidden" name="id" value="<?= $game['id']?>">
+  <input type="submit" name="update" class="btn btn-success" value="Actualiser">
+</form>
+<?php
+$refresh=ob_get_clean();
+
+//TAMPON 1 : INFOS
 ob_start();
 ?>
 <div class="container">
@@ -17,28 +42,18 @@ ob_start();
       <img src="/img/games/gameNb<?=$_GET['id']?>.jpg" style="width: 16rem" class="rounded float-left" alt="...">
     </div>
     <div class="card-body">
-
       <h4 class="card-title"><?=$game['title']?></h4>
       <hr>
-
       <?php
       if(isset($infos)){
         echo $info;
       }
       if(!empty($_SESSION['login']) and $_SESSION['role_id']==1){
-        ob_start();
-        ?>
-        <form style="text-align: right;" method="get" action="edit_info">
-          <input type="hidden" name="id" value="<?= $game['id']?>">
-          <input type="submit" name="update" class="btn btn-primary" value="Editer les informations">
-        </form>
-        <?php
-        $formEdit=ob_get_clean();
         echo $formEdit;
       }
-      ?>
-      <?php
-
+      if(isset($flag)){
+        echo $refresh;
+      }
       ?>
     </div>
   </div>

@@ -61,6 +61,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Cherchez un jeu" aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Recherche</button>
       </form>
+      &nbsp;
       <?php
         if(!empty($_SESSION['login']) AND $_SESSION['role_id']==1){
           echo $admin;

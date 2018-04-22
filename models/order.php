@@ -10,7 +10,7 @@ function getOrder($otitle) {
 }
 function getOrders() {
     $db = getDb();
-    $response = $db->query('SELECT b.*, u.login FROM book AS b JOIN `user` AS u ON user_id = u.id;');
+    $response = $db->query('SELECT b.*, u.login FROM book AS b JOIN `user` AS u ON user_id = u.id ORDER BY status_id;');
     $datas = $response->fetchAll();
     $response->closeCursor(); // Termine le traitement de la requête
     return $datas;
@@ -53,16 +53,6 @@ function newOrder($values) {
 }
 function setStatus($id, $status){
     $db = getDb();
-    if($status == 3){
-      $response = $db->prepare('UPDATE `book` SET `status_id` = 1 WHERE `book`.`id` = :id');
-      $response->execute(array('id' => $id));
-      $response->closeCursor();
-    }
-
-}
-
-function purchase($id, $status){
-    $db = getDb();
     if($status == 2){
       $response = $db->prepare('UPDATE `book` SET `status_id` = 3 WHERE `book`.`id` = :id');
       $response->execute(array('id' => $id));
@@ -71,9 +61,19 @@ function purchase($id, $status){
 
 }
 
+function purchase($id, $status){
+    $db = getDb();
+    if($status == 1){
+      $response = $db->prepare('UPDATE `book` SET `status_id` = 2 WHERE `book`.`id` = :id');
+      $response->execute(array('id' => $id));
+      $response->closeCursor();
+    }
+
+}
+
 function checkIfOrder($id){
   $db = getDb();
-  $response = $db->prepare('SELECT * FROM book WHERE status_id = 2 AND user_id = :id;');
+  $response = $db->prepare('SELECT * FROM book WHERE status_id = 1 AND user_id = :id;');
   $response->execute(array('id' => $id));
   $datas = $response->fetch();
   $response->closeCursor();

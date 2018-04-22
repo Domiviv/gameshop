@@ -9,6 +9,6 @@ if(empty($_SESSION) or $_SESSION['role_id']!= 1){
 $type = $_POST['type'];
 $editor = $_POST['editor'];
 $values = array('type' => $type, 'editor' => $editor);
-$result = setInfosById($_POST['id'], $values);
+$result = setInfos($_POST['id'], $values);
 header('Location: index');
 ?>

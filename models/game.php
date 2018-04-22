@@ -61,7 +61,7 @@ function getInfosById($item_id) {
     return $datas;
 }
 
-function newInfos($val) {
+function newInfos($values) {
     $query = 'INSERT INTO info_item SET';
     foreach ($values as $name => $value) {
         $query = $query.' '.$name.' = :'.$name.',';
@@ -73,4 +73,21 @@ function newInfos($val) {
     $response->closeCursor();
 }
 
+function setInfos($id, $values) {
+    $query = 'UPDATE info_item SET';
+    foreach ($values as $name => $value) {
+        $query = $query.' '.$name.' = :'.$name.',';
+    }
+    $query = substr($query, 0, -1).' WHERE id = :id;';
+    $db = getDb();
+    $response = $db->prepare($query);
+    $response->execute(array_merge(array('id' => $id), $values));
+    $response->closeCursor(); // Termine le traitement de la requête
+}
+function deleteInfo($id) {
+    $db = getDb();
+    $response = $db->prepare('DELETE FROM info_item WHERE id = :id;');
+    $response->execute(array('id' => $id));
+    $response->closeCursor(); // Termine le traitement de la requête
+}
 ?>

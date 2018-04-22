@@ -15,7 +15,7 @@ else{
     if(!$res){
       //ça rentre dans la condition si checkIfOrder n'a pas trouvé de commande en attente
       //(status_id = 2) dans book au nom de la personne loguée
-      $values = array('user_id' => $_SESSION['id'], 'status_id' => 2);
+      $values = array('user_id' => $_SESSION['id'], 'status_id' => 1);
       $order = newOrder($values);
       //la ligne ci-dessous redirige vers un message d'alerte pour l'utilisateur
       //car l'appel deux fois de suite à checkIfOrder buguait, j'ai du les séparrer

@@ -13,7 +13,7 @@ function cartByUser($cartOrder){
 
 function orderForCart($id){
       $db = getDb();
-      $query="SELECT id FROM book WHERE status_id = 2 AND user_id = :id";
+      $query="SELECT id FROM book WHERE status_id = 1 AND user_id = :id";
       $response = $db->prepare($query);
       $response->execute(array('id' => $id));
       $datas = $response->fetch();

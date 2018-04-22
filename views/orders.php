@@ -21,10 +21,10 @@ ob_start();
                       <input type="hidden" name="id" value=<?=$order['id']?>>
                       <input type="hidden" name="status" value=<?=$order['status_id']?>>
                       <?php
-                      if($order['status_id']==1){
+                      if($order['status_id']==3){
                         echo '<button class="btn btn-outline-success" type="submit">Validée</button>';
                       }
-                      elseif($order['status_id']==2){
+                      elseif($order['status_id']==1){
                         echo '<button class="btn btn-outline-warning" type="submit">En attente</button>';
                       }
                       else{
@@ -33,7 +33,7 @@ ob_start();
                       ?>
                   </form>
                   &nbsp;
-                  
+
               </div>
           </td>
 

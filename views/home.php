@@ -2,6 +2,13 @@
 ob_start() ?>
 &nbsp;
 <div class="container">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="..." alt="GameShop">
+      </div>
+    </div>
+  </div>
   <div class="row">
   <?php foreach($games as $game):?>
     <div class="card border-secondary mb-3" style="width: 13.5rem;">
