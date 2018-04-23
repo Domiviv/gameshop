@@ -5,13 +5,14 @@ ob_start() ?>
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="..." alt="GameShop">
+        <img class="d-block w-100" src="/img/banner.png" alt="GameShop">&nbsp;
       </div>
     </div>
   </div>
   <div class="row">
   <?php foreach($games as $game):?>
-    <div class="card border-secondary mb-3" style="width: 13.5rem;">
+    &nbsp;
+    <div class="card border-secondary mb-3" style="text-align: center; width: 13.5rem;">
       <div class="card-body">
         <h6 class="card-title" style="text-align: center"><?=$game['title']?></h6>
       </div>
@@ -33,7 +34,7 @@ ob_start() ?>
       </form>
       <?php endif?>
     </div>
-    &nbsp;&nbsp;
+    &nbsp;
   <?php endforeach ?>
   </div>
 </div>
