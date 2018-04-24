@@ -35,10 +35,6 @@ ob_start();
                           echo '<button class="btn btn-outline-warning" type="submit">Rétrograder</button>';
                         }
                         ?>
-                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deluser<?= $user['id']?>">
-                            Supprimer
-                        </button>
-                        <?php include 'includes/delete_user.php' ?>
                     </form>
                     <?php endif ?>
                 </div>

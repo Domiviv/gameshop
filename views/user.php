@@ -23,5 +23,6 @@ ob_start();
 </div>
 <?php
 $content = ob_get_clean();
+$title = "Edition de l'utilisateur: ".$user['login'];
 include 'includes/layout.php';
 ?>

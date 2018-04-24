@@ -28,6 +28,7 @@ else{
       $values = array('book_id' => $res['id'], 'item_id' => $_POST['id'], 'price' => $_POST['price']);
       $itemToCart = addToCart($values);
       header('Location: index');
+      exit();
     }
 
 

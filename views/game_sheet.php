@@ -60,5 +60,6 @@ ob_start();
 </div>
 <?php
 $content = ob_get_clean();
+$title = 'Fiche: ' . $game['title'];
 include 'includes/layout.php';
 ?>

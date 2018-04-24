@@ -8,4 +8,5 @@ if(!empty($_SESSION['login']))
     session_destroy(); // destroy session data in storage
 }
 header('Location: index');
+exit();
 ?>

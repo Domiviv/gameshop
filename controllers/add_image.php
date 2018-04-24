@@ -28,6 +28,7 @@ else{
           echo $file_destination;
           if(move_uploaded_file($file_tmp, $file_destination)){
             header('Location: gamespan');
+            exit();
           }
           else{
             $error = 'Erreur lors de l\'upload';

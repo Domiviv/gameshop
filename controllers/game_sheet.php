@@ -4,7 +4,6 @@ session_start();
 if(!empty($_GET['id']))
 {
     $game = getGameById($_GET['id']);
-    $title = 'Fiche: ' . $game['title'];
     $infos = getInfosById($_GET['id']);
     if(!$infos){
       $ed = 'rédaction en cours';

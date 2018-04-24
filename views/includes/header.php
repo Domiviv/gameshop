@@ -42,7 +42,7 @@
   $notadmin=ob_get_clean();
   ob_start();
 ?>
-  <a class="btn btn-light" href="profile" role="button"><?php echo $_SESSION['login']?></a>
+  <a class="btn btn-light" role="button"><?php echo $_SESSION['login']?></a>
   &nbsp;
   <a class="btn btn-outline-light" href="logout">Se déconnecter</a>
 <?php

@@ -11,4 +11,5 @@ $editor = $_POST['editor'];
 $values = array('type' => $type, 'editor' => $editor);
 $result = setInfos($_POST['id'], $values);
 header('Location: index');
+exit();
 ?>

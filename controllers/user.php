@@ -8,7 +8,6 @@ if(empty($_SESSION['login']) or $_SESSION['role_id']!=1){
 if(!empty($_GET['id']))
 {
     $user = getUserById($_GET['id']);
-    $title = "Edition de l'utilisateur: ".$user['login'];
     $action = "edit_user";
 }
 include 'views/user.php';

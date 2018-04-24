@@ -1,5 +1,4 @@
 <?php
-$title='Ajouter un jeu';
 ob_start();
 ?>
 <div class="container logbox">
@@ -18,5 +17,6 @@ ob_start();
 </div>
 <?php
 $content = ob_get_clean();
+$title = 'Ajouter un jeu';
 include 'includes/layout.php';
 ?>

@@ -19,5 +19,6 @@ ob_start();
 </div>
 <?php
 $content = ob_get_clean();
+$title = "Edition du jeu: ".$game['title'];
 include 'includes/layout.php';
 ?>

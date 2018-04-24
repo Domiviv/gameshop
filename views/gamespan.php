@@ -43,7 +43,7 @@ ob_start();
     </tbody>
 </table>
 <?php
-$title = 'Gestion des jeux';
 $content = ob_get_clean();
+$title = 'Gestion des jeux';
 include 'includes/layout.php';
 ?>
