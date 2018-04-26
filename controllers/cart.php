@@ -8,7 +8,7 @@ if(empty($_SESSION['login']) or $_SESSION['role_id']==1){
 }
 else{
     $cartOrder = orderForCart($_SESSION['id']);
-    $items = cartByUser($cartOrder['id']);
+    $items = cartByOrderId($cartOrder['id']);
     include 'views/cart.php';
 }
 ?>

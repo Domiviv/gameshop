@@ -13,7 +13,7 @@ function orderForCart($id){
 }
 
 //fonction qui récupère le panier en fonction de l'id de la commande
-function cartByUser($cartOrder){
+function cartByOrderId($cartOrder){
       $db = getDb();
       $query = "SELECT b.*, i.title FROM book_item AS b JOIN item AS i ON b.item_id = i.id WHERE b.book_id = :cartOrder";
       $response = $db->prepare($query);

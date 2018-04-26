@@ -12,7 +12,7 @@ ob_start() ?>
   <div class="row">
   <?php foreach($games as $game):?>
     &nbsp;
-    <div class="card border-secondary mb-3" style="text-align: center; width: 13.5rem;">
+    <div id="draggable" class="card border-secondary mb-3" style="text-align: center; width: 13.5rem;">
       <div class="card-body">
         <h6 class="card-title" style="text-align: center"><?=$game['title']?></h6>
       </div>

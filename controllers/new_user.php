@@ -8,7 +8,7 @@ if(!empty($_POST['login']))
         $login = $_POST['login'];
         $values = array('login' => $login, 'password' => $password);
         $user = newUser($values);
-        if(strtolower($_SESSION['login']) == 'admin')
+        if(strtolower($_SESSION['role_id']) == '1')
         {
           header('Location: users');
         }

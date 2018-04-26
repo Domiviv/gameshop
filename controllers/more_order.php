@@ -10,7 +10,7 @@ if(empty($_SESSION['login']) or $_SESSION['role_id']!=1){
 else{
   $idOrder = $_GET['id'];
   $user = getUser($_GET['login']);
-  $items = cartByUser($user['id']);
+  $items = cartByOrderId($_GET['id']);
   include 'views/more_orders.php';
 }
 ?>

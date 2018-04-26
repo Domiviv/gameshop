@@ -23,5 +23,9 @@ if(!empty($_POST['id']))
         header('Location: index');
         exit();
     }
+    else{
+      $error = "Le mot de passe et la confirmation ne sont pas identiques";
+      include "views/profile.php";
+    }
 }
 ?>
