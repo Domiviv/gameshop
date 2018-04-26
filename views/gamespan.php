@@ -8,7 +8,12 @@ ob_start();
             <th scope="col">Image</th>
             <th scope="col">Titre</th>
             <th scope="col">Prix</th>
-            <th style="text-align: right" scope="col"><a class="btn btn-success" href="add_game_form" role="button">Ajouter un jeu</a></th>
+            <th style="text-align: right" scope="col">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#jsonImport">Import via JSON</button>
+              <?php include 'includes/import_json.php' ?>
+              &nbsp;
+              <a class="btn btn-success" href="add_game_form" role="button">Ajouter un jeu</a>
+            </th>
         </tr>
     </thead>
     <tbody>
