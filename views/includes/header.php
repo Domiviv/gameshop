@@ -9,6 +9,7 @@
     <a class="dropdown-item" href="gamespan">Gérer les jeux</a>
     <a class="dropdown-item" href="users">Gérer les utilisateurs</a>
     <a class="dropdown-item" href="orders">Gérer les commandes</a>
+    <a class="dropdown-item" href="sales_chart">Graphique des ventes</a>
   </div>
 </li>
 <?php

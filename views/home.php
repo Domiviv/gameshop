@@ -2,16 +2,9 @@
 ob_start() ?>
 &nbsp;
 <div class="container">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="/img/banner.png" alt="GameShop">&nbsp;
-      </div>
-    </div>
-  </div>
+  <img class="d-block w-100" style="padding-right:3em" src="/img/banner.png" alt="GameShop">&nbsp;
   <div class="row">
   <?php foreach($games as $game):?>
-    &nbsp;
     <div id="draggable" class="card border-secondary mb-3" style="text-align: center; width: 13.5rem;">
       <div class="card-body">
         <h6 class="card-title" style="text-align: center"><?=$game['title']?></h6>

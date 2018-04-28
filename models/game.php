@@ -21,6 +21,16 @@ function getGame($gtitle) {
     return $datas;
 }
 
+//fonction permettant de récupérer les stats de ventes
+function getStat() {
+    $db = getDb();
+    $response = $db->query('SELECT COUNT(b.id) AS qt, i.title FROM book_item AS b JOIN item AS i ON b.item_id = i.id GROUP BY item_id ORDER BY qt DESC LIMIT 5');
+    //la requête renvoie les 5 jeux les plus vendus
+    $datas = $response->fetchAll();
+    $response->closeCursor(); // Termine le traitement de la requête
+    return $datas;
+}
+
 //fonction permettant de récupérer un jeu sur base de son id
 function getGameById($id) {
     $db = getDb();

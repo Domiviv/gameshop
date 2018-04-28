@@ -1,26 +1,26 @@
 [
     {
-      "title":"jeu 7",
-      "price":"10"
+      "title":"Okami HD",
+      "price":"13.99"
     },
 
     {
-      "title":"jeu 8",
-      "price":"20"
+      "title":"Dragon Ball FighterZ",
+      "price":"59.99"
     },
 
     {
-      "title":"jeu 9",
-      "price":"30"
+      "title":"Wolfenstein: The Old Blood",
+      "price":"15.99"
     },
 
     {
-      "title":"jeu 10",
-      "price":"40"
+      "title":"Assassin's Creed Origins",
+      "price":"49.99"
     },
 
     {
-      "title":"jeu 11",
-      "price":"50"
+      "title":"Destiny 2",
+      "price":"39.99"
     }
 ]
