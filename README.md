@@ -41,14 +41,16 @@ Installation:
     </VirtualHost>
   ```
 
-    /!\ PRENDRE SOIN DE REMPLACER "D:\EXEMPLE CHEMIN VERS\gameshop" par le chemin menant vers le dossier du projet /!\
+  /!\ PRENDRE SOIN DE REMPLACER "D:\EXEMPLE CHEMIN VERS\gameshop" par le chemin menant vers le dossier du projet /!\
 
 - Aller sur cet emplacement : "C:\xampp\apache\conf"
 - Modifier le fichier "httpd.conf"
 - Rechercher dans le fichier (CTRL+F) ceci : "include conf"
 - Rajouter au-dessus les 2 lignes suivantes :
+```
     # gameshop.conf
     Include conf/extra/gameshop.conf
+```
 - Redémarrer la machine pour être sur de l'application des modifications
 - Aller sur un navigateur et lancer la page : "http://localhost/phpmyadmin/"
 - Cliquer sur "Nouvelle base de données", dans le menu sur la gauche
