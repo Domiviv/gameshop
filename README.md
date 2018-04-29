@@ -21,6 +21,8 @@ Installation:
 - Enregistrer
 - Aller sur cet emplacement : "C:\xampp\apache\conf\extra"
 - Créer un fichier : "gameshop.conf" et y copier les lignes suivantes
+
+```
     #####
     ## gameshop.local
     ## DOMAINE de gameshop
@@ -37,6 +39,7 @@ Installation:
     DocumentRoot "D:\EXEMPLE CHEMIN VERS\gameshop"
     ServerName gameshop.local
     </VirtualHost>
+  ```
 
     /!\ PRENDRE SOIN DE REMPLACER "D:\EXEMPLE CHEMIN VERS\gameshop" par le chemin menant vers le dossier du projet /!\
 
