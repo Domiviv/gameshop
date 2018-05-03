@@ -5,7 +5,7 @@ ob_start(); ?>
   <canvas id="myChart" height="200"></canvas>
 </div>
 <?php
-$title = 'test';
+$title = 'Graphique des ventes';
 $content = ob_get_clean();
 include 'includes/layout.php'
 ?>
