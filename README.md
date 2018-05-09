@@ -62,3 +62,8 @@ Installation:
 - Ensuite, cliquer sur "Exécuter"
 - Taper l'url suivante : "http://gameshop.local"
 - Fini !!!
+
+
+- Identifiants de connexion du compte administrateur pour effectuer les test:
+- login : admin
+- password : passadmin
